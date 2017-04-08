@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
+//import java.util.Calendar;
+
 /**
  * Created by sumnererhard on 3/12/17.
  */
@@ -16,6 +18,7 @@ public class CurrentWeather {
     private String mSummary;
     private String mIcon;
     private String mTimeZone;
+    private Date mDateTime;
 
     public String getIcon() {
         return mIcon;
@@ -70,10 +73,11 @@ public class CurrentWeather {
     }
 
     public String getFormattedTime(){
+
         SimpleDateFormat formatter = new SimpleDateFormat("h:mm a");
         formatter.setTimeZone(TimeZone.getTimeZone(getTimeZone()));
-        Date dateTime = new Date(getTime() * 1000);
-        String timeString = formatter.format(dateTime);
+        mDateTime = new Date(getTime() * 1000);
+        String timeString = formatter.format(mDateTime);
 
         return timeString;
     }
@@ -121,5 +125,13 @@ public class CurrentWeather {
 
     public void setTimeZone(String timeZone) {
         mTimeZone = timeZone;
+    }
+
+    public Date getDateTime() {
+        return mDateTime;
+    }
+
+    public void setDateTime(Date dateTime) {
+        this.mDateTime = dateTime;
     }
 }

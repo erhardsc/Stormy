@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFC9708"
@@ -12,7 +13,7 @@
         android:id="@+id/temperatureLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="---"
+        android:text="--"
         android:textColor="@android:color/white"
         android:textSize="150sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,12 +30,12 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/degree"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintTop_toTopOf="@+id/temperatureLabel"
+        android:layout_marginTop="32dp"
         app:layout_constraintLeft_toRightOf="@+id/temperatureLabel"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintTop_toTopOf="@+id/temperatureLabel"
+        app:srcCompat="@mipmap/degree"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
 
     <TextView
         android:id="@+id/timeLabel"
@@ -59,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Alcatraze Island, CA"
+        android:text="Hold Tight!"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/timeLabel"
@@ -74,32 +75,32 @@
         android:id="@+id/iconImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/cloudy_night"
-        tools:layout_constraintBottom_creator="1"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="22dp"
         app:layout_constraintBottom_toBottomOf="@+id/locationLabel"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="22dp"
         app:layout_constraintRight_toLeftOf="@+id/locationLabel"
-        android:layout_marginRight="8dp"
-        android:layout_marginEnd="8dp"/>
+        app:srcCompat="@mipmap/cloudy_night"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
 
     <TextView
         android:id="@+id/humidityLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:alpha=".5"
         android:text="Humidity"
         android:textColor="@android:color/white"
-        android:layout_marginStart="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/temperatureLabel"
-        app:layout_constraintRight_toLeftOf="@+id/summaryLabel"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.629"
-        android:layout_marginEnd="8dp"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/summaryLabel"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureLabel"/>
 
     <TextView
         android:id="@+id/humidityValue"
@@ -120,31 +121,31 @@
         android:id="@+id/precipLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
         android:alpha=".5"
         android:text="Precipitation"
         android:textColor="@android:color/white"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temperatureLabel"
         app:layout_constraintLeft_toRightOf="@+id/summaryLabel"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="0dp"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureLabel"/>
 
     <TextView
         android:id="@+id/precipValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
         android:text="---"
         android:textColor="@android:color/white"
         android:textSize="24sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginEnd="28dp"
         app:layout_constraintRight_toRightOf="@+id/precipLabel"
         app:layout_constraintTop_toBottomOf="@+id/precipLabel"
-        android:layout_marginRight="28dp"/>
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"/>
 
     <TextView
         android:id="@+id/summaryLabel"
@@ -182,13 +183,13 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/locationLabel"/>
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/locationLabel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
